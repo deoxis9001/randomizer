@@ -1,0 +1,102 @@
+
+#define bombchuSpeed 0x2C0
+
+// make belari fusion start as completed
+PUSH; ORG $9FC0; BYTE 3; POP
+
+// make remote bombs explode on a timer just like normal bombs
+PUSH; ORG $1B1E2; SHORT 0; POP
+
+// replace the graphics for the remote bomb
+PUSH
+ORG $2E6280
+#incbin "bombchuItem.img.bin"
+ORG $5C1B70
+#incbin "bombchuItem.img.bin"
+#incbin "bombchuDrop.img.bin"
+POP
+// and make it blue
+PUSH
+ORG $31E94C; BYTE 0x10
+ORG $31E95C; BYTE 0x10
+ORG $31E96C; BYTE 0x10
+POP
+
+PUSH; ORG $1B1B4; jumpToHack(newBombRoutine); POP
+ALIGN 4
+newBombRoutine:
+#incbin "newBombRoutine.dmp"
+POIN bombchuTable
+POIN bombchuNormalGraphics
+POIN bombchuExplodingGraphics
+
+ALIGN 4
+bombchuNormalGraphics:
+#incbin "bombchuNormal.img.bin"
+
+ALIGN 4
+bombchuExplodingGraphics:
+#incbin "bombchuExploding.img.bin"
+
+ALIGN 4
+bombchuTable:
+POIN bombchuStart|1
+WORD 0
+POIN bombchuRun|1
+POIN bombchuEnd|1
+
+ALIGN 4
+bombchuStart:
+#incbin "bombchuStart.dmp"
+
+ALIGN 4
+bombchuRun:
+#incbin "bombchuRun.dmp"
+POIN bombchuSlowList
+POIN bombchuTransitionList
+POIN bombchuIgnoreList
+WORD bombchuSpeed
+
+ALIGN 4
+bombchuEnd:
+#incbin "bombchuEnd.dmp"
+
+bombchuSlowList:
+BYTE 0x04 // Vertical Stairs
+BYTE 0x05 // Horizontal Stairs
+BYTE 0x0D // Vertical Slope/Wall
+BYTE 0x0E // Vertical Slope/Wall
+BYTE 0x0F // Horizontal Slope/Wall
+BYTE 0x10 // Ledge
+BYTE 0x28 // Vertical steps/Tall Grass
+BYTE 0x29 // Horizontal Steps
+BYTE 0x2B // Climbing Wall
+BYTE 0x2C // Top of Climbing Wall
+BYTE 0 // terminator
+
+bombchuTransitionList:
+BYTE 0x04 // Vertical Stairs
+BYTE 0x05 // Horizontal Stairs
+BYTE 0x0D // Vertical Slope/Wall
+BYTE 0x0E // Vertical Slope/Wall
+BYTE 0x0F // Horizontal Slope/Wall
+BYTE 0x10 // Ledge
+BYTE 0x1E // Middle of ladder
+BYTE 0x2A // Top of ladder
+BYTE 0x2B // Climbing Wall
+BYTE 0x2C // Top of Climbing Wall
+BYTE 0 // terminator
+
+bombchuIgnoreList:
+BYTE 0x04 // Vertical Stairs
+BYTE 0x05 // Horizontal Stairs
+BYTE 0x0D // Vertical Slope/Wall
+BYTE 0x0E // Vertical Slope/Wall
+BYTE 0x0F // Horizontal Slope/Wall
+BYTE 0x10 // Ledge
+BYTE 0x2B // Climbing Wall
+BYTE 0x2C // Top of Climbing Wall
+BYTE 0 // terminator
+
+// align so the ups patch works properly
+ALIGN 0x10

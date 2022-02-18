@@ -34,6 +34,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportDefaultLogicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomize = new System.Windows.Forms.Button();
             this.generalTab = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@
             this.saveSpoilerButton = new System.Windows.Forms.Button();
             this.savePatchButton = new System.Windows.Forms.Button();
             this.saveRomButton = new System.Windows.Forms.Button();
-            this.logicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDefaultLogicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.generalTab.SuspendLayout();
@@ -75,27 +75,30 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 294);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 464);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(390, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(843, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip";
             // 
             // statusText
             // 
             this.statusText.Name = "statusText";
-            this.statusText.Size = new System.Drawing.Size(0, 17);
+            this.statusText.Size = new System.Drawing.Size(0, 16);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.logicToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(390, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(843, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,21 +107,37 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
+            // logicToolStripMenuItem
+            // 
+            this.logicToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportDefaultLogicToolStripMenuItem});
+            this.logicToolStripMenuItem.Name = "logicToolStripMenuItem";
+            this.logicToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.logicToolStripMenuItem.Text = "Logic";
+            // 
+            // exportDefaultLogicToolStripMenuItem
+            // 
+            this.exportDefaultLogicToolStripMenuItem.Name = "exportDefaultLogicToolStripMenuItem";
+            this.exportDefaultLogicToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.exportDefaultLogicToolStripMenuItem.Text = "Export Default Logic";
+            this.exportDefaultLogicToolStripMenuItem.Click += new System.EventHandler(this.ExportDefaultLogicToolStripMenuItem_Click);
+            // 
             // randomize
             // 
-            this.randomize.Location = new System.Drawing.Point(19, 268);
+            this.randomize.Location = new System.Drawing.Point(16, 432);
+            this.randomize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.randomize.Name = "randomize";
-            this.randomize.Size = new System.Drawing.Size(75, 23);
+            this.randomize.Size = new System.Drawing.Size(100, 28);
             this.randomize.TabIndex = 2;
             this.randomize.Text = "Randomize";
             this.randomize.UseVisualStyleBackColor = true;
@@ -135,10 +154,11 @@
             this.generalTab.Controls.Add(this.customLogicPath);
             this.generalTab.Controls.Add(this.browseLogicButton);
             this.generalTab.Controls.Add(this.customLogicCheckBox);
-            this.generalTab.Location = new System.Drawing.Point(4, 22);
+            this.generalTab.Location = new System.Drawing.Point(4, 25);
+            this.generalTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.generalTab.Name = "generalTab";
-            this.generalTab.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTab.Size = new System.Drawing.Size(361, 209);
+            this.generalTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.generalTab.Size = new System.Drawing.Size(776, 362);
             this.generalTab.TabIndex = 0;
             this.generalTab.Text = "General";
             this.generalTab.UseVisualStyleBackColor = true;
@@ -146,9 +166,10 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(153, 8);
+            this.button1.Location = new System.Drawing.Point(204, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 23);
+            this.button1.Size = new System.Drawing.Size(144, 33);
             this.button1.TabIndex = 13;
             this.button1.Text = "Random Seed";
             this.button1.UseVisualStyleBackColor = true;
@@ -157,25 +178,28 @@
             // seedLabel
             // 
             this.seedLabel.AutoSize = true;
-            this.seedLabel.Location = new System.Drawing.Point(6, 13);
+            this.seedLabel.Location = new System.Drawing.Point(8, 16);
+            this.seedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.seedLabel.Name = "seedLabel";
-            this.seedLabel.Size = new System.Drawing.Size(35, 13);
+            this.seedLabel.Size = new System.Drawing.Size(45, 17);
             this.seedLabel.TabIndex = 12;
             this.seedLabel.Text = "Seed:";
             // 
             // seedField
             // 
-            this.seedField.Location = new System.Drawing.Point(47, 10);
+            this.seedField.Location = new System.Drawing.Point(63, 12);
+            this.seedField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.seedField.Name = "seedField";
-            this.seedField.Size = new System.Drawing.Size(100, 20);
+            this.seedField.Size = new System.Drawing.Size(132, 22);
             this.seedField.TabIndex = 10;
             // 
             // customPatchCheckBox
             // 
             this.customPatchCheckBox.AutoSize = true;
-            this.customPatchCheckBox.Location = new System.Drawing.Point(5, 100);
+            this.customPatchCheckBox.Location = new System.Drawing.Point(7, 123);
+            this.customPatchCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customPatchCheckBox.Name = "customPatchCheckBox";
-            this.customPatchCheckBox.Size = new System.Drawing.Size(114, 17);
+            this.customPatchCheckBox.Size = new System.Drawing.Size(146, 21);
             this.customPatchCheckBox.TabIndex = 11;
             this.customPatchCheckBox.Text = "Use Custom Patch";
             this.customPatchCheckBox.UseVisualStyleBackColor = true;
@@ -184,17 +208,19 @@
             // customPatchPath
             // 
             this.customPatchPath.Enabled = false;
-            this.customPatchPath.Location = new System.Drawing.Point(113, 123);
+            this.customPatchPath.Location = new System.Drawing.Point(151, 151);
+            this.customPatchPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customPatchPath.Name = "customPatchPath";
-            this.customPatchPath.Size = new System.Drawing.Size(206, 20);
+            this.customPatchPath.Size = new System.Drawing.Size(273, 22);
             this.customPatchPath.TabIndex = 10;
             // 
             // browsePatchButton
             // 
             this.browsePatchButton.Enabled = false;
-            this.browsePatchButton.Location = new System.Drawing.Point(32, 123);
+            this.browsePatchButton.Location = new System.Drawing.Point(43, 151);
+            this.browsePatchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.browsePatchButton.Name = "browsePatchButton";
-            this.browsePatchButton.Size = new System.Drawing.Size(75, 23);
+            this.browsePatchButton.Size = new System.Drawing.Size(100, 28);
             this.browsePatchButton.TabIndex = 9;
             this.browsePatchButton.Text = "Browse...";
             this.browsePatchButton.UseVisualStyleBackColor = true;
@@ -203,17 +229,19 @@
             // customLogicPath
             // 
             this.customLogicPath.Enabled = false;
-            this.customLogicPath.Location = new System.Drawing.Point(113, 175);
+            this.customLogicPath.Location = new System.Drawing.Point(151, 215);
+            this.customLogicPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customLogicPath.Name = "customLogicPath";
-            this.customLogicPath.Size = new System.Drawing.Size(206, 20);
+            this.customLogicPath.Size = new System.Drawing.Size(273, 22);
             this.customLogicPath.TabIndex = 8;
             // 
             // browseLogicButton
             // 
             this.browseLogicButton.Enabled = false;
-            this.browseLogicButton.Location = new System.Drawing.Point(32, 175);
+            this.browseLogicButton.Location = new System.Drawing.Point(43, 215);
+            this.browseLogicButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.browseLogicButton.Name = "browseLogicButton";
-            this.browseLogicButton.Size = new System.Drawing.Size(75, 23);
+            this.browseLogicButton.Size = new System.Drawing.Size(100, 28);
             this.browseLogicButton.TabIndex = 7;
             this.browseLogicButton.Text = "Browse...";
             this.browseLogicButton.UseVisualStyleBackColor = true;
@@ -222,9 +250,10 @@
             // customLogicCheckBox
             // 
             this.customLogicCheckBox.AutoSize = true;
-            this.customLogicCheckBox.Location = new System.Drawing.Point(5, 152);
+            this.customLogicCheckBox.Location = new System.Drawing.Point(7, 187);
+            this.customLogicCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customLogicCheckBox.Name = "customLogicCheckBox";
-            this.customLogicCheckBox.Size = new System.Drawing.Size(112, 17);
+            this.customLogicCheckBox.Size = new System.Drawing.Size(144, 21);
             this.customLogicCheckBox.TabIndex = 5;
             this.customLogicCheckBox.Text = "Use Custom Logic";
             this.customLogicCheckBox.UseVisualStyleBackColor = true;
@@ -235,19 +264,21 @@
             this.mainTabs.Controls.Add(this.generalTab);
             this.mainTabs.Controls.Add(this.optionTabPage);
             this.mainTabs.Controls.Add(this.gimmicksTabPage);
-            this.mainTabs.Location = new System.Drawing.Point(9, 27);
+            this.mainTabs.Location = new System.Drawing.Point(12, 33);
+            this.mainTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTabs.Name = "mainTabs";
             this.mainTabs.SelectedIndex = 0;
-            this.mainTabs.Size = new System.Drawing.Size(369, 235);
+            this.mainTabs.Size = new System.Drawing.Size(784, 391);
             this.mainTabs.TabIndex = 9;
             // 
             // optionTabPage
             // 
             this.optionTabPage.Controls.Add(this.optionControlLayout);
-            this.optionTabPage.Location = new System.Drawing.Point(4, 22);
+            this.optionTabPage.Location = new System.Drawing.Point(4, 25);
+            this.optionTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.optionTabPage.Name = "optionTabPage";
-            this.optionTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.optionTabPage.Size = new System.Drawing.Size(361, 209);
+            this.optionTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optionTabPage.Size = new System.Drawing.Size(776, 362);
             this.optionTabPage.TabIndex = 2;
             this.optionTabPage.Text = "Settings";
             this.optionTabPage.UseVisualStyleBackColor = true;
@@ -256,17 +287,19 @@
             // 
             this.optionControlLayout.AutoScroll = true;
             this.optionControlLayout.Location = new System.Drawing.Point(0, 0);
+            this.optionControlLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.optionControlLayout.Name = "optionControlLayout";
-            this.optionControlLayout.Size = new System.Drawing.Size(361, 209);
+            this.optionControlLayout.Size = new System.Drawing.Size(780, 362);
             this.optionControlLayout.TabIndex = 0;
             // 
             // gimmicksTabPage
             // 
             this.gimmicksTabPage.Controls.Add(this.gimmickControlLayout);
-            this.gimmicksTabPage.Location = new System.Drawing.Point(4, 22);
+            this.gimmicksTabPage.Location = new System.Drawing.Point(4, 25);
+            this.gimmicksTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gimmicksTabPage.Name = "gimmicksTabPage";
-            this.gimmicksTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gimmicksTabPage.Size = new System.Drawing.Size(361, 209);
+            this.gimmicksTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gimmicksTabPage.Size = new System.Drawing.Size(776, 362);
             this.gimmicksTabPage.TabIndex = 1;
             this.gimmicksTabPage.Text = "Gimmicks";
             this.gimmicksTabPage.UseVisualStyleBackColor = true;
@@ -275,8 +308,9 @@
             // 
             this.gimmickControlLayout.AutoScroll = true;
             this.gimmickControlLayout.Location = new System.Drawing.Point(0, 0);
+            this.gimmickControlLayout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gimmickControlLayout.Name = "gimmickControlLayout";
-            this.gimmickControlLayout.Size = new System.Drawing.Size(361, 209);
+            this.gimmickControlLayout.Size = new System.Drawing.Size(768, 362);
             this.gimmickControlLayout.TabIndex = 0;
             // 
             // generatedTab
@@ -305,7 +339,7 @@
             this.gimmickHashValue.AutoSize = true;
             this.gimmickHashValue.Location = new System.Drawing.Point(100, 83);
             this.gimmickHashValue.Name = "gimmickHashValue";
-            this.gimmickHashValue.Size = new System.Drawing.Size(0, 13);
+            this.gimmickHashValue.Size = new System.Drawing.Size(0, 17);
             this.gimmickHashValue.TabIndex = 10;
             // 
             // settingHashValue
@@ -313,7 +347,7 @@
             this.settingHashValue.AutoSize = true;
             this.settingHashValue.Location = new System.Drawing.Point(93, 59);
             this.settingHashValue.Name = "settingHashValue";
-            this.settingHashValue.Size = new System.Drawing.Size(0, 13);
+            this.settingHashValue.Size = new System.Drawing.Size(0, 17);
             this.settingHashValue.TabIndex = 9;
             // 
             // label3
@@ -321,7 +355,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(102, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Gimmick Hash:";
             // 
@@ -330,7 +364,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Setting Hash:";
             // 
@@ -339,7 +373,7 @@
             this.generatedLogicLabel.AutoSize = true;
             this.generatedLogicLabel.Location = new System.Drawing.Point(54, 36);
             this.generatedLogicLabel.Name = "generatedLogicLabel";
-            this.generatedLogicLabel.Size = new System.Drawing.Size(0, 13);
+            this.generatedLogicLabel.Size = new System.Drawing.Size(0, 17);
             this.generatedLogicLabel.TabIndex = 6;
             // 
             // label1
@@ -347,7 +381,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Logic: ";
             // 
@@ -356,7 +390,7 @@
             this.generatedSeedValue.AutoSize = true;
             this.generatedSeedValue.Location = new System.Drawing.Point(51, 13);
             this.generatedSeedValue.Name = "generatedSeedValue";
-            this.generatedSeedValue.Size = new System.Drawing.Size(0, 13);
+            this.generatedSeedValue.Size = new System.Drawing.Size(0, 17);
             this.generatedSeedValue.TabIndex = 4;
             // 
             // generatedSeedLabel
@@ -364,7 +398,7 @@
             this.generatedSeedLabel.AutoSize = true;
             this.generatedSeedLabel.Location = new System.Drawing.Point(16, 13);
             this.generatedSeedLabel.Name = "generatedSeedLabel";
-            this.generatedSeedLabel.Size = new System.Drawing.Size(38, 13);
+            this.generatedSeedLabel.Size = new System.Drawing.Size(49, 17);
             this.generatedSeedLabel.TabIndex = 3;
             this.generatedSeedLabel.Text = "Seed: ";
             // 
@@ -399,32 +433,18 @@
             this.saveRomButton.UseVisualStyleBackColor = true;
             this.saveRomButton.Click += new System.EventHandler(this.SaveRomButton_Click);
             // 
-            // logicToolStripMenuItem
-            // 
-            this.logicToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportDefaultLogicToolStripMenuItem});
-            this.logicToolStripMenuItem.Name = "logicToolStripMenuItem";
-            this.logicToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.logicToolStripMenuItem.Text = "Logic";
-            // 
-            // exportDefaultLogicToolStripMenuItem
-            // 
-            this.exportDefaultLogicToolStripMenuItem.Name = "exportDefaultLogicToolStripMenuItem";
-            this.exportDefaultLogicToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.exportDefaultLogicToolStripMenuItem.Text = "Export Default Logic";
-            this.exportDefaultLogicToolStripMenuItem.Click += new System.EventHandler(this.ExportDefaultLogicToolStripMenuItem_Click);
-            // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 316);
+            this.ClientSize = new System.Drawing.Size(843, 486);
             this.Controls.Add(this.mainTabs);
             this.Controls.Add(this.randomize);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainWindow";
             this.Text = "Minish Cap Randomizer";
             this.statusStrip1.ResumeLayout(false);

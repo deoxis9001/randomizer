@@ -1,0 +1,152 @@
+#include "./voicegroups.event"
+#include "./waves.event"
+
+//include all the songs you want to use with the following format: (without the leading //)
+//#include "./songs/songname.event"
+//songs
+#include "./songs/Dearly_beloved.event"
+#include "./songs/La_pace.event"
+#include "./songs/Lazy_afternoons.event"
+#include "./songs/Bounce_o_rama.event"
+#include "./songs/Welcome_to_Wonderland.event"
+#include "./songs/Scherzo_di_notte.event"
+#include "./songs/Winnie_the_Pooh.event"
+#include "./songs/Just_wondering.event"
+#include "./songs/Castle_Oblivion.event"
+#include "./songs/Night_of_fate.event"
+#include "./songs/Captain_Hook_pirate_ship.event"
+#include "./songs/Sinister_sundown.event"
+#include "./songs/This_is_Halloween.event"
+#include "./songs/Traverse_town.event"
+#include "./songs/Olympus_Coliseum.event"
+#include "./songs/Hollow_bastion.event"
+#include "./songs/Forgotten_challenge.event"
+#include "./songs/To_our_surprise.event"
+#include "./songs/Arabian_dream.event"
+#include "./songs/Monstrous_Monstro.event"
+#include "./songs/A_very_small_wish.event"
+#include "./songs/Go_for_it.event"
+#include "./songs/Spooks_of_Halloween_town.event"
+#include "./songs/Struggle_away.event"
+#include "./songs/Graceful_assassin.event"
+#include "./songs/The_force_in_you.event"
+#include "./songs/Revenge_of_chaos.event"
+#include "./songs/The_fight_for_my_friends.event"
+#include "./songs/The_13th_struggle.event"
+#include "./songs/Face_it.event"
+#include "./songs/A_day_in_Agrabah.event"
+#include "./songs/Namine.event"
+#include "./songs/Pirate_gigue.event"
+#include "./songs/Hand_in_hand.event"
+
+//replace each "//used" with the song you want to have used in that spot using the following format: (without the leading //)
+//POIN songname.event
+//only songs that will appear without music rando have "//used" below them, 
+//if you want music rando to sound good put the song you want below each ORG statement instead
+//sound table overrides
+PUSH
+ORG $B1D41C //hyrule castle (tournament ver.)
+ORG $B1D424 //vaati motif
+ORG $B1D42C //title screen
+POIN Dearly_beloved
+ORG $B1D434 //hyrule castle motif
+ORG $B1D43C //Element get
+//used
+ORG $B1D444 //Fairy Fountain
+POIN Namine
+ORG $B1D44C //File Select
+POIN Dearly_beloved
+ORG $B1D454 //Intro Cutscene
+ORG $B1D45C //Credits
+//used
+ORG $B1D464 //Game Over
+POIN La_pace
+ORG $B1D46C //Saving Zelda
+ORG $B1D474 //Title Screen (ALTTP)
+ORG $B1D47C //Vaati's Theme
+ORG $B1D484 //Ezlo's Theme
+ORG $B1D48C //Story
+ORG $B1D494 //Festival Approach
+ORG $B1D49C //Beat Vaati
+ORG $B1D4A4 //empty
+ORG $B1D4AC //Climbimg a Beanstalk
+POIN Hand_in_hand
+ORG $B1D4B4 //House Theme
+POIN Lazy_afternoons
+ORG $B1D4BC //Cucco Minigame
+POIN Bounce_o_rama
+ORG $B1D4C4 //Syrup's Theme
+POIN Just_wondering
+ORG $B1D4CC //Dungeon
+POIN Castle_Oblivion
+ORG $B1D4D4 //Element Theme/Wind Tribe Motif
+POIN La_pace
+ORG $B1D4DC //Hyrule Field
+POIN Sinister_sundown
+ORG $B1D4E4 //Hyrule Castle
+POIN Scherzo_di_notte
+ORG $B1D4EC //Hyrule Castle (no intro)
+ORG $B1D4F4 //Minish Village
+POIN Bounce_o_rama
+ORG $B1D4FC //Minish Woods
+POIN Welcome_to_Wonderland
+ORG $B1D504 //Crenel Storm
+POIN Night_of_fate
+ORG $B1D50C //Castor
+POIN Captain_Hook_pirate_ship
+ORG $B1D514 //Hyrule Town
+POIN Traverse_town
+ORG $B1D51C //Royal Valley
+POIN This_is_Halloween
+ORG $B1D524 //Cloud Tops
+POIN Olympus_Coliseum
+ORG $B1D52C //DHC
+POIN Hollow_bastion
+ORG $B1D534 //Castle Secret Entry
+POIN Forgotten_challenge
+ORG $B1D53C //DWS
+POIN To_our_surprise
+ORG $B1D544 //CoF
+POIN Go_for_it
+ORG $B1D54C //FoW
+POIN Arabian_dream
+ORG $B1D554 //ToD
+POIN A_very_small_wish
+ORG $B1D55C //PoW
+POIN Go_for_it
+ORG $B1D564 //Ezlo Story
+ORG $B1D56C //Royal Crypt
+POIN Spooks_of_Halloween_town
+ORG $B1D574 //Elemental Sanctuary
+POIN Namine
+ORG $B1D57C //Fight Theme
+POIN The_13th_struggle
+ORG $B1D584 //Boss Theme
+POIN Struggle_away
+ORG $B1D58C //Vaati 1
+POIN Graceful_assassin
+ORG $B1D594 //Vaati 2
+POIN The_force_in_you
+ORG $B1D59C //Castle Collapse
+POIN Forgotten_challenge
+ORG $B1D5A4 //Vaati 3
+POIN Revenge_of_chaos
+ORG $B1D5AC //Fight Theme 2
+POIN The_fight_for_my_friends
+ORG $B1D5B4 //Digging Cave
+POIN Castle_Oblivion
+ORG $B1D5BC //Dojos
+POIN Face_it
+ORG $B1D5C4 //The Minish Cap
+ORG $B1D5CC //Mt. Crenel
+POIN Olympus_Coliseum
+ORG $B1D5D4 //Picori Festival
+ORG $B1D5DC //Lost Woods
+ORG $B1D5E4 //Fairy Fountain 2
+POIN Namine
+ORG $B1D5EC //Wind Ruins
+POIN A_day_in_Agrabah
+//...
+ORG $B1D704 //Obtain scroll (TODO: check)
+//used
+POP

@@ -1,0 +1,167 @@
+#include "./voicegroups.event"
+#include "./waves.event"
+
+//include all the songs you want to use with the following format: (without the leading //)
+//#include "./songs/songname.event"
+//songs
+
+#include "./songs/seq_000.event"
+#include "./songs/seq_001.event"
+#include "./songs/seq_002.event"
+#include "./songs/seq_003.event"
+#include "./songs/seq_006.event"
+#include "./songs/seq_007.event"
+#include "./songs/seq_008.event"
+#include "./songs/seq_009.event"
+#include "./songs/seq_010.event"
+#include "./songs/seq_012.event"
+#include "./songs/seq_013.event"
+#include "./songs/seq_014.event"
+#include "./songs/seq_015.event"
+#include "./songs/seq_018.event"
+#include "./songs/seq_019.event"
+#include "./songs/seq_021.event"
+#include "./songs/seq_022.event"
+#include "./songs/seq_023.event"
+#include "./songs/seq_024.event"
+#include "./songs/seq_025.event"
+#include "./songs/seq_028.event"
+#include "./songs/seq_031.event"
+#include "./songs/seq_032.event"
+#include "./songs/seq_033.event"
+#include "./songs/seq_034.event"
+#include "./songs/seq_035.event"
+#include "./songs/seq_036.event"
+#include "./songs/seq_037.event"
+#include "./songs/seq_040.event"
+#include "./songs/seq_041.event"
+#include "./songs/seq_043.event"
+#include "./songs/seq_044.event"
+#include "./songs/seq_045.event"
+#include "./songs/seq_046.event"
+#include "./songs/seq_049.event"
+#include "./songs/seq_050.event"
+#include "./songs/seq_061.event"
+#include "./songs/seq_064.event"
+#include "./songs/seq_067.event"
+#include "./songs/seq_076.event"
+#include "./songs/seq_077.event"
+
+//replace each "//used" with the song you want to have used in that spot using the following format: (without the leading //)
+//POIN songname.event
+//only songs that will appear without music rando have "//used" below them, 
+//if you want music rando to sound good put the song you want below each ORG statement instead
+//sound table overrides
+PUSH
+ORG $B1D41C //hyrule castle (tournament ver.)
+ORG $B1D424 //vaati motif
+POIN seq_045
+ORG $B1D42C //title screen
+//used
+ORG $B1D434 //hyrule castle motif
+ORG $B1D43C //Element get
+POIN seq_014
+ORG $B1D444 //Great Fairy Fountain
+POIN seq_013
+ORG $B1D44C //File Select
+POIN seq_000
+ORG $B1D454 //Intro Cutscene
+POIN seq_002
+ORG $B1D45C //Credits
+POIN seq_067
+ORG $B1D464 //Game Over
+POIN seq_010
+ORG $B1D46C //Saving Zelda
+ORG $B1D474 //Title Screen (ALTTP)
+ORG $B1D47C //Vaati's Theme
+POIN seq_045
+ORG $B1D484 //Ezlo's Theme
+ORG $B1D48C //Story
+//used
+ORG $B1D494 //Festival Approach
+ORG $B1D49C //Beat Vaati
+ORG $B1D4A4 //empty
+ORG $B1D4AC //Climbimg a Beanstalk
+POIN seq_040
+ORG $B1D4B4 //House Theme
+POIN seq_019
+ORG $B1D4BC //Cucco Minigame
+POIN seq_003
+ORG $B1D4C4 //Syrup's Theme
+POIN seq_037
+ORG $B1D4CC //Dungeon
+POIN seq_050
+ORG $B1D4D4 //Element Theme/Wind Tribe Motif
+POIN seq_008
+ORG $B1D4DC //Hyrule Field
+POIN seq_035
+ORG $B1D4E4 //Hyrule Castle
+POIN seq_022
+ORG $B1D4EC //Hyrule Castle (no intro)
+ORG $B1D4F4 //Minish Village
+POIN seq_007
+ORG $B1D4FC //Minish Woods
+POIN seq_025
+ORG $B1D504 //Crenel Storm
+POIN seq_049
+ORG $B1D50C //Castor
+POIN seq_028
+ORG $B1D514 //Hyrule Town
+POIN seq_033
+ORG $B1D51C //Royal Valley
+POIN seq_012
+ORG $B1D524 //Cloud Tops
+POIN seq_076
+ORG $B1D52C //DHC
+POIN seq_018
+ORG $B1D534 //Castle Secret Entry
+POIN seq_032
+ORG $B1D53C //DWS
+POIN seq_021
+ORG $B1D544 //CoF
+POIN seq_024
+ORG $B1D54C //FoW
+POIN seq_061
+ORG $B1D554 //ToD
+POIN seq_006
+ORG $B1D55C //PoW
+POIN seq_031
+ORG $B1D564 //Ezlo Story
+//used
+ORG $B1D56C //Royal Crypt
+POIN seq_036
+ORG $B1D574 //Elemental Sanctuary
+POIN seq_008
+ORG $B1D57C //Fight Theme
+POIN seq_043
+ORG $B1D584 //Boss Theme
+POIN seq_001
+ORG $B1D58C //Vaati 1
+POIN seq_034
+ORG $B1D594 //Vaati 2
+POIN seq_064
+ORG $B1D59C //Castle Collapse
+POIN seq_023
+ORG $B1D5A4 //Vaati 3
+POIN seq_009
+ORG $B1D5AC //Fight Theme 2
+POIN seq_043
+ORG $B1D5B4 //Digging Cave
+POIN seq_050
+ORG $B1D5BC //Dojos
+POIN seq_046
+ORG $B1D5C4 //The Minish Cap
+ORG $B1D5CC //Mt. Crenel
+POIN seq_044
+ORG $B1D5D4 //Picori Festival
+ORG $B1D5DC //Lost Woods
+ORG $B1D5E4 //Fairy Fountain
+POIN seq_077
+ORG $B1D5EC //Wind Ruins
+POIN seq_015
+//...
+ORG $B1D704 //Obtain scroll (TODO: check)
+//used
+ORG $B1DC5C //Treasure Get (TODO: check)
+POIN seq_041
+POP

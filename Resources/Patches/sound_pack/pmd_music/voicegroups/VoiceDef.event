@@ -1,0 +1,187 @@
+//Event file generated from Sappy .s format.
+//***
+//
+// VoiceDef.event V0.2
+// (C) 2015 ipatix
+//                    
+//**************************************************************//
+
+	//#include "waves.event"
+
+//***
+// Output Device
+//**********************//
+
+	#define	DirectSound  	0x00
+	#define	SquareWave1 	0x01
+	#define	SquareWave2 	0x02
+	#define	ProgWave 	0x03
+	#define	ProgNoise 	0x04
+	#define	ASquareWave1 	0x09
+	#define	ASquareWave2 	0x0A
+	#define	AProgWave 	0x0B
+	#define	AProgNoise 	0x0C
+	#define	DirectSoundFix 	0x08
+	#define	DirectReverse 	0x10
+	#define	DirectRevFix 	0x18
+	#define	DirectComp 	0x20
+	#define	ReverseComp 	0x30
+
+//***
+// Table Types
+//**********************//
+
+	#define	KeySplit  	0x40
+	#define	DrumTable 	0x80
+
+//***
+// Wave Patterns
+//**********************//
+
+	#define	WaveDuty75 	0x03
+	#define	WaveDuty50  	0x02
+	#define	WaveDuty25 	0x01
+	#define	WaveDuty12 	0x00
+
+	#define	FineNoise 	0x00
+	#define	RoughNoise 	0x01
+
+//***
+// Keys
+//**********************//
+
+	#define	CnM2 	0		//
+	#define	CsM2 	1		//
+	#define	DnM2 	2		//
+	#define	DsM2 	3		//
+	#define	EnM2 	4		//
+	#define	FnM2 	5		//
+	#define	FsM2 	6		//
+	#define	GnM2 	7		//
+	#define	GsM2 	8		//
+	#define	AnM2 	9		//
+	#define	AsM2 	10		//
+	#define	BnM2 	11		//
+	#define	CnM1 	12		//
+	#define	CsM1 	13		//
+	#define	DnM1 	14		//
+	#define	DsM1 	15		//
+	#define	EnM1 	16		//
+	#define	FnM1 	17		//
+	#define	FsM1 	18		//
+	#define	GnM1 	19		//
+	#define	GsM1 	20		//
+	#define	AnM1 	21		//
+	#define	AsM1 	22		//
+	#define	BnM1 	23		//
+	#define	Cn0 	24		//
+	#define	Cs0 	25		//
+	#define	Dn0 	26		//
+	#define	Ds0 	27		//
+	#define	En0 	28		//
+	#define	Fn0 	29		//
+	#define	Fs0 	30		//
+	#define	Gn0 	31		//
+	#define	Gs0 	32		//
+	#define	An0 	33		//
+	#define	As0 	34		//
+	#define	Bn0 	35		//
+	#define	Cn1 	36		//
+	#define	Cs1 	37		//
+	#define	Dn1 	38		//
+	#define	Ds1 	39		//
+	#define	En1 	40		//
+	#define	Fn1 	41		//
+	#define	Fs1 	42		//
+	#define	Gn1 	43		//
+	#define	Gs1 	44		//
+	#define	An1 	45		//
+	#define	As1 	46		//
+	#define	Bn1 	47		//
+	#define	Cn2 	48		//
+	#define	Cs2 	49		//
+	#define	Dn2 	50		//
+	#define	Ds2 	51		//
+	#define	En2 	52		//
+	#define	Fn2 	53		//
+	#define	Fs2 	54		//
+	#define	Gn2 	55		//
+	#define	Gs2 	56		//
+	#define	An2 	57		//
+	#define	As2 	58		//
+	#define	Bn2 	59		//
+	#define	Cn3 	60		//
+	#define	Cs3 	61		//
+	#define	Dn3 	62		//
+	#define	Ds3 	63		//
+	#define	En3 	64		//
+	#define	Fn3 	65		//
+	#define	Fs3 	66		//
+	#define	Gn3 	67		//
+	#define	Gs3 	68		//
+	#define	An3 	69		// 440Hz
+	#define	As3 	70		//
+	#define	Bn3 	71		//
+	#define	Cn4 	72		//
+	#define	Cs4 	73		//
+	#define	Dn4 	74		//
+	#define	Ds4 	75		//
+	#define	En4 	76		//
+	#define	Fn4 	77		//
+	#define	Fs4 	78		//
+	#define	Gn4 	79		//
+	#define	Gs4 	80		//
+	#define	An4 	81		//
+	#define	As4 	82		//
+	#define	Bn4 	83		//
+	#define	Cn5 	84		//
+	#define	Cs5 	85		//
+	#define	Dn5 	86		//
+	#define	Ds5 	87		//
+	#define	En5 	88		//
+	#define	Fn5 	89		//
+	#define	Fs5 	90		//
+	#define	Gn5 	91		//
+	#define	Gs5 	92		//
+	#define	An5 	93		//
+	#define	As5 	94		//
+	#define	Bn5 	95		//
+	#define	Cn6 	96		//
+	#define	Cs6 	97		//
+	#define	Dn6 	98		//
+	#define	Ds6 	99		//
+	#define	En6 	100		//
+	#define	Fn6 	101		//
+	#define	Fs6 	102		//
+	#define	Gn6 	103		//
+	#define	Gs6 	104		//
+	#define	An6 	105		//
+	#define	As6 	106		//
+	#define	Bn6 	107		//
+	#define	Cn7 	108		//
+	#define	Cs7 	109		//
+	#define	Dn7 	110		//
+	#define	Ds7 	111		//
+	#define	En7 	112		//
+	#define	Fn7 	113		//
+	#define	Fs7 	114		//
+	#define	Gn7 	115		//
+	#define	Gs7 	116		//
+	#define	An7 	117		//
+	#define	As7 	118		//
+	#define	Bn7 	119		//
+	#define	Cn8 	120		//
+	#define	Cs8 	121		//
+	#define	Dn8 	122		//
+	#define	Ds8 	123		//
+	#define	En8 	124		//
+	#define	Fn8 	125		//
+	#define	Fs8 	126		//
+	#define	Gn8 	127		//
+
+//***
+// center value of PAN
+//******************************************************//
+
+	#define	c_v 	0xC0		// -64 ~ +63
+

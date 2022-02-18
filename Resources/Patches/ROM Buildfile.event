@@ -1,6 +1,5 @@
 #define jumpToHack(offset) "BYTE 0x00 0x4B 0x18 0x47; POIN (offset|0x1)"
 #include "extDefinitions.event" //a file reserved for the randomizer to output definitions for the patches
-
 #ifndef seedHashed
 	#define seedHashed "0"
 #endif
@@ -342,3 +341,27 @@ PUSH; ORG $53C84; SHORT 0x700F; POP // randomizable bottle contents (uses sub id
 
 // TESTING: boots still work while small
 PUSH; ORG $11B694; BYTE 1; POP
+
+#ifdef enable_firerod
+	#include "firerod/firerodInventory.event"
+#endif
+
+#ifdef emerald_music
+	#include "sound_pack/emerald_music/sound.event"
+#endif
+
+#ifdef pmd_music
+	#include "sound_pack/pmd_music/sound.event"
+#endif
+
+#ifdef com_music
+	#include "sound_pack/com_music/sound.event"
+#endif
+
+#ifdef ffva_music
+	#include "sound_pack/ffva_music/sound.event"
+#endif
+
+#ifdef bombchu
+	#include "bombchu/installer.event"
+#endif

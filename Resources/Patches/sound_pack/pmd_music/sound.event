@@ -1,0 +1,199 @@
+#include "./voicegroups.event"
+#include "./waves.event"
+
+//include all the songs you want to use with the following format: (without the leading //)
+//#include "./songs/songname.event"
+//songs
+#include "./songs/benevolent_spirit.event"
+#include "./songs/boss_battle.event"
+#include "./songs/buried_relic.event"
+#include "./songs/danger_theres_trouble.event"
+#include "./songs/dream.event"
+#include "./songs/exploration_failed.event"
+#include "./songs/file_select.event"
+#include "./songs/final_battle_vs_rayquaza.event"
+#include "./songs/friend_area_caves.event"
+#include "./songs/friend_area_forest.event"
+#include "./songs/friend_area_oceanic.event"
+#include "./songs/friend_area_pond.event"
+#include "./songs/friend_area_steppe.event"
+#include "./songs/friend_area_swamp.event"
+#include "./songs/friend_area_wilds.event"
+#include "./songs/frosty_forest.event"
+#include "./songs/frosty_grotto.event"
+#include "./songs/great_canyon.event"
+#include "./songs/kecleon_shop.event"
+#include "./songs/lapis_cave.event"
+#include "./songs/monster_house.event"
+#include "./songs/mt_blaze.event"
+#include "./songs/mt_blaze_peak.event"
+#include "./songs/mt_thunder.event"
+#include "./songs/mystery_main_theme_jingle.event"
+#include "./songs/personality_test.event"
+#include "./songs/pokemon_square.event"
+#include "./songs/rescure_team_base.event"
+#include "./songs/silent_chasm.event"
+#include "./songs/sinister_woods.event"
+#include "./songs/sky_tower.event"
+#include "./songs/sky_tower_summit.event"
+#include "./songs/staff_roll_credits.event"
+#include "./songs/stop_thief.event"
+#include "./songs/team_rank_up.event"
+#include "./songs/theres_trouble.event"
+#include "./songs/thunderwave_cave.event"
+#include "./songs/title.event"
+#include "./songs/unused_2.event"
+#include "./songs/world_calamity.event"
+
+//replace each "//used" with the song you want to have used in that spot using the following format: (without the leading //)
+//POIN songname
+//only songs that will appear without music rando have "//used" below them, 
+//if you want music rando to sound good put the song you want below each ORG statement instead
+//sound table overrides
+PUSH
+ORG $B1D41C //hyrule castle (tournament ver.)
+ORG $B1D424 //vaati motif
+ORG $B1D42C //title screen
+//used
+POIN title
+ORG $B1D434 //hyrule castle motif
+ORG $B1D43C //Element get
+//used
+POIN mystery_main_theme_jingle
+ORG $B1D444 //Fairy Fountain
+//used
+POIN dream
+ORG $B1D44C //File Select
+//used
+POIN file_select
+ORG $B1D454 //Intro Cutscene
+ORG $B1D45C //Credits
+//used
+POIN staff_roll_credits
+ORG $B1D464 //Game Over
+//used
+POIN exploration_failed
+ORG $B1D46C //Saving Zelda
+ORG $B1D474 //Title Screen (ALTTP)
+ORG $B1D47C //Vaati's Theme
+ORG $B1D484 //Ezlo's Theme
+ORG $B1D48C //Story
+ORG $B1D494 //Festival Approach
+ORG $B1D49C //Beat Vaati
+ORG $B1D4A4 //empty
+ORG $B1D4AC //Climbimg a Beanstalk
+//used
+POIN friend_area_wilds
+ORG $B1D4B4 //House Theme
+//used
+POIN rescure_team_base
+ORG $B1D4BC //Cucco Minigame
+//used
+POIN unused_2
+ORG $B1D4C4 //Syrup's Theme
+//used
+POIN kecleon_shop
+ORG $B1D4CC //Dungeon
+//used
+POIN lapis_cave
+ORG $B1D4D4 //Element Theme/Wind Tribe Motif
+//used
+POIN personality_test
+ORG $B1D4DC //Hyrule Field
+//used
+POIN friend_area_swamp
+ORG $B1D4E4 //Hyrule Castle
+//used
+POIN friend_area_oceanic
+ORG $B1D4EC //Hyrule Castle (no intro)
+ORG $B1D4F4 //Minish Village
+//used
+POIN friend_area_steppe
+ORG $B1D4FC //Minish Woods
+//used
+POIN friend_area_forest
+ORG $B1D504 //Crenel Storm
+//used
+POIN danger_theres_trouble
+ORG $B1D50C //Castor
+//used
+POIN thunderwave_cave
+ORG $B1D514 //Hyrule Town
+//used
+POIN pokemon_square
+ORG $B1D51C //Royal Valley
+//used
+POIN sinister_woods
+ORG $B1D524 //Cloud Tops
+//used
+POIN mt_blaze_peak
+ORG $B1D52C //DHC
+//used
+POIN sky_tower_summit
+ORG $B1D534 //Castle Secret Entry
+//used
+POIN world_calamity
+ORG $B1D53C //DWS
+//used
+POIN silent_chasm
+ORG $B1D544 //CoF
+//used
+POIN mt_blaze
+ORG $B1D54C //FoW
+//used
+POIN great_canyon
+ORG $B1D554 //ToD
+//used
+POIN frosty_forest
+ORG $B1D55C //PoW
+//used
+POIN sky_tower
+ORG $B1D564 //Ezlo Story
+ORG $B1D56C //Royal Crypt
+//used
+POIN frosty_grotto
+ORG $B1D574 //Elemental Sanctuary
+//used
+POIN benevolent_spirit
+ORG $B1D57C //Fight Theme
+//used
+POIN theres_trouble
+ORG $B1D584 //Boss Theme
+//used
+POIN stop_thief
+ORG $B1D58C //Vaati 1
+//used
+POIN monster_house
+ORG $B1D594 //Vaati 2
+//used
+POIN boss_battle
+ORG $B1D59C //Castle Collapse
+ORG $B1D5A4 //Vaati 3
+//used
+POIN final_battle_vs_rayquaza
+ORG $B1D5AC //Fight Theme 2
+//used
+POIN theres_trouble
+ORG $B1D5B4 //Digging Cave
+//used
+POIN friend_area_caves
+ORG $B1D5BC //Dojos
+//used
+POIN friend_area_pond
+ORG $B1D5C4 //The Minish Cap
+ORG $B1D5CC //Mt. Crenel
+//used
+POIN mt_thunder
+ORG $B1D5D4 //Picori Festival
+ORG $B1D5DC //Lost Woods
+ORG $B1D5E4 //Fairy Fountain 2
+//used
+POIN dream
+ORG $B1D5EC //Wind Ruins
+//used
+POIN buried_relic
+//...
+ORG $B1D704 //Obtain scroll (TODO: check)
+//used
+POIN team_rank_up
+POP
