@@ -290,6 +290,63 @@ internal abstract class ShufflerBase
 
             return outputBytes;
         }
+
+        /// <summary>
+        ///     Run the same write pipeline as <see cref="GetRandomizedRom"/> + <see cref="ApplyPatch(Stream, string?)"/>
+        ///     against an in-memory capturing stream and return only the (offset, value) pairs of bytes
+        ///     actually modified. Lets the web server hand the client a manifest without ever touching
+        ///     the user's ROM.
+        ///
+        ///     ColorzCore's internal Rom (Vendor/ColorzCore/.../IO/ROM.cs) reads the entire output
+        ///     stream at startup and writes the entire 32 MB buffer back at the end. To distinguish
+        ///     intentional writes from passthrough writes without modifying ColorzCore, we run the
+        ///     pipeline twice with two different fill bytes (0x00 and 0xFF) and merge the results:
+        ///     any byte ColorzCore actually wrote with value V is filtered out only in the run whose
+        ///     fill equals V, so it always shows up in the other run.
+        /// </summary>
+        public IReadOnlyList<(int Offset, byte Value)> GetRandomizationWrites(string? patchFile = null)
+        {
+            var runZero = ExecuteWritePipeline(0x00, patchFile);
+            var runFf   = ExecuteWritePipeline(0xFF, patchFile);
+
+            var merged = new Dictionary<long, byte>(runZero.Writes);
+            foreach (var (off, val) in runFf.Writes)
+            {
+                if (merged.TryGetValue(off, out var existing))
+                {
+                    if (existing != val)
+                        throw new InvalidOperationException(
+                            $"Non-deterministic ColorzCore output at offset 0x{off:X}: 0x{existing:X2} vs 0x{val:X2}");
+                }
+                else
+                {
+                    merged[off] = val;
+                }
+            }
+
+            return merged
+                .OrderBy(kv => kv.Key)
+                .Select(kv => ((int)kv.Key, kv.Value))
+                .ToList();
+        }
+
+        private CapturingRomStream ExecuteWritePipeline(byte fill, string? patchFile)
+        {
+            var sparse = new CapturingRomStream(fill);
+
+            var writer = new Writer(sparse);
+            foreach (var location in Locations) location.WriteLocation(writer);
+            WriteElementPositions(writer);
+            UpdateEntrances(writer);
+            writer.Flush();
+
+            sparse.Seek(0, SeekOrigin.Begin);
+            int exitCode = ApplyPatch(sparse, patchFile);
+            if (exitCode != 0)
+                throw new Exception($"ColorzCore returned non-zero exit code {exitCode}");
+
+            return sparse;
+        }
     
     #endregion
 
@@ -755,6 +812,9 @@ internal abstract class ShufflerBase
 
         private bool RomCrcValid(Rom rom)
         {
+            // In zero-ROM (dummy) mode the server never sees the user's ROM, so
+            // CRC matching is the client's responsibility (SHA-1 check before POST).
+            if (rom.IsDummy) return true;
             if (LogicParser.SubParser.RomCrc != null)
                 return rom.RomData.Crc32() == LogicParser.SubParser.RomCrc;
             return true;

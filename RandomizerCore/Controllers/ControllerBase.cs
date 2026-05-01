@@ -260,6 +260,32 @@ public abstract class ControllerBase
         return new PatchFile();
     }
 
+    /// Returns the (offset, byte) pairs the shuffler would write into a vanilla
+    /// ROM, without ever requiring a vanilla ROM on the server side. Use with
+    /// <see cref="Rom.InitializeDummy"/> for the zero-ROM web flow.
+    public IReadOnlyList<(int Offset, byte Value)> GetRandomizationWrites(out ShufflerControllerResult result)
+    {
+        try
+        {
+            Shuffler.ValidateState(true);
+            var writes = Shuffler.GetRandomizationWrites();
+            result = new ShufflerControllerResult { WasSuccessful = true };
+            return writes;
+        }
+        catch (Exception e)
+        {
+            Logger.Instance.LogException(e);
+            Logger.Instance.SaveLogTransaction();
+            result = new ShufflerControllerResult
+            {
+                WasSuccessful = false,
+                Error = e,
+                ErrorMessage = e.Message
+            };
+            return new List<(int, byte)>();
+        }
+    }
+
     public string CreateSpoiler()
     {
         Shuffler.ValidateState(true);
